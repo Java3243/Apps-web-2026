@@ -1,20 +1,45 @@
-# Practica-02-RF8
+# Practica-02-RF08
 
-Proyecto web para la Práctica 02 basado en el Requerimiento Funcional RF08.
+Aplicación web de la Práctica 02 basada en el Requerimiento Funcional RF08.
+
+## RF08 - Gestión de disponibilidad
+
+El sistema deberá permitir que los propietarios actualicen la disponibilidad y el horario de sus espacios publicados.
+
+## Tecnologías utilizadas
+
+- HTML5
+- Bootstrap 5.3
+- CSS3 personalizado
+- JavaScript
+
+## Componentes de Bootstrap utilizados
+
+- Navbar
+- Container, Row y Column
+- Cards
+- Buttons
+- Forms
+- Badges
+- Alerts
+- Modal
+- Utilidades responsive
+
+## Funcionalidad
+
+El propietario puede seleccionar un espacio publicado y actualizar:
+- Cantidad de espacios disponibles.
+- Hora de apertura.
+- Hora de cierre.
+
+Los cambios se reflejan inmediatamente en la tarjeta mediante JavaScript.
 
 ## Estructura
 
-- `index.html` - estructura de la aplicación.
-- `styles.css` - estilos personalizados y colores de la interfaz.
-- `script.js` - interacción de inicio de sesión, consulta y reserva.
-
-## Tecnologías
-
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5.3
-
-## RF08
-
-Gestión de disponibilidad: el sistema deberá permitir que los propietarios actualicen la disponibilidad y el horario de sus espacios publicados.
+```text
+Practica-02-RF08/
+├── index.html
+├── styles.css
+├── script.js
+└── README.md
+```

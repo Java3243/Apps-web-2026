@@ -1,37 +1,73 @@
-const loginForm = document.getElementById("login-form");
-const loginSection = document.getElementById("login-section");
-const appSection = document.getElementById("app-section");
+// JavaScript personalizado - Practica 02 RF08
+const editButtons = document.querySelectorAll(".edit-space-btn");
+const editModal = new bootstrap.Modal(document.getElementById("editSpaceModal"));
+const editForm = document.getElementById("edit-space-form");
 
-loginForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+const modalSpace = document.getElementById("modal-space");
+const modalLocation = document.getElementById("modal-location");
+const modalAvailability = document.getElementById("modal-availability");
+const modalOpen = document.getElementById("modal-open");
+const modalClose = document.getElementById("modal-close");
 
-    loginSection.classList.add("d-none");
-    appSection.classList.remove("d-none");
+let currentCard = null;
+
+editButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    currentCard = button.closest(".space-card");
+    modalSpace.value = button.dataset.space;
+    modalLocation.value = button.dataset.location;
+    modalAvailability.value = button.dataset.availability;
+    modalOpen.value = button.dataset.open;
+    modalClose.value = button.dataset.close;
+    editModal.show();
+  });
 });
 
-const reservationForm = document.getElementById("reservation-form");
-const message = document.getElementById("message");
-const reserveButton = document.getElementById("reserve-btn");
-const availability = document.getElementById("availability");
+editForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-reservationForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+  const availability = Number(modalAvailability.value);
+  const opening = modalOpen.value;
+  const closing = modalClose.value;
 
-    message.className = "alert alert-info mt-4";
-    message.textContent =
-        "Consulta realizada. El espacio seleccionado está disponible para la fecha y hora indicadas.";
-});
+  if (availability < 0) return;
 
-reserveButton.addEventListener("click", function () {
-    const current = parseInt(availability.textContent);
+  if (opening >= closing) {
+    window.alert("La hora de apertura debe ser anterior a la hora de cierre.");
+    return;
+  }
 
-    if (current > 0) {
-        availability.textContent = `${current - 1} espacios`;
+  const availabilityElement = currentCard.querySelector("[data-availability]");
+  const scheduleElement = currentCard.querySelector("[data-schedule]");
+  const badge = currentCard.querySelector(".availability-badge, .bg-secondary");
+  const button = currentCard.querySelector(".edit-space-btn");
 
-        message.className = "alert alert-success mt-4";
-        message.textContent = "La reserva se realizó correctamente.";
-    } else {
-        message.className = "alert alert-danger mt-4";
-        message.textContent = "No hay espacios disponibles.";
-    }
+  availabilityElement.textContent =
+    `${availability} ${availability === 1 ? "espacio" : "espacios"}`;
+  scheduleElement.textContent = `${opening} - ${closing}`;
+
+  button.dataset.availability = availability;
+  button.dataset.open = opening;
+  button.dataset.close = closing;
+
+  if (availability === 0) {
+    badge.textContent = "Sin disponibilidad";
+    badge.classList.remove("availability-badge");
+    badge.classList.add("bg-secondary");
+  } else {
+    badge.textContent = "Disponible";
+    badge.classList.remove("bg-secondary");
+    badge.classList.add("availability-badge");
+  }
+
+  editModal.hide();
+
+  const alertElement = document.getElementById("success-alert");
+  alertElement.classList.remove("d-none");
+  alertElement.classList.add("show");
+
+  setTimeout(() => {
+    alertElement.classList.remove("show");
+    setTimeout(() => alertElement.classList.add("d-none"), 150);
+  }, 3500);
 });
