@@ -34,12 +34,4 @@ El propietario puede seleccionar un espacio publicado y actualizar:
 
 Los cambios se reflejan inmediatamente en la tarjeta mediante JavaScript.
 
-## Estructura
 
-```text
-Practica-02-RF08/
-├── index.html
-├── styles.css
-├── script.js
-└── README.md
-```
