@@ -1,4 +1,4 @@
-// JavaScript personalizado - Practica 02 RF08
+
 const editButtons = document.querySelectorAll(".edit-space-btn");
 const editModal = new bootstrap.Modal(document.getElementById("editSpaceModal"));
 const editForm = document.getElementById("edit-space-form");
