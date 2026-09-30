@@ -1,65 +1,46 @@
 
-:root {
-  --navy: #191e2b;
-  --light-blue: #a5bfd6;
-  --panel-blue: #cfe7fa;
-  --accent: #98d5e2;
-  --accent-dark: #72bdce;
-  --white: #fff;
-  --text: #111;
-  --muted: #5e6670;
-}
-* { box-sizing: border-box; }
 body {
-  margin: 0;
-  background: var(--light-blue);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: #a5bfd6;
+    font-family: Arial, sans-serif;
 }
-.custom-navbar { background: var(--navy); min-height: 68px; }
-.navbar-brand { letter-spacing: .3px; }
-.hero-section { background: var(--light-blue); padding: 58px 0 42px; }
-.section-label { font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 8px; color: #374454; }
-.hero-section h1 { font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 700; margin-bottom: 12px; }
-.hero-text { max-width: 720px; font-size: 1.1rem; margin-bottom: 0; }
-.section-title { font-weight: 700; }
-.space-card {
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0 3px 10px rgba(25,30,43,.12);
-  transition: transform .15s ease, box-shadow .15s ease;
+
+.navbar {
+    background-color: #191e2b;
 }
-.space-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(25,30,43,.16); }
-.space-card .card-body { padding: 25px; }
-.availability-badge { background: var(--accent); color: var(--text); font-weight: 600; }
-.space-data p { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 11px; font-size: .95rem; }
-.space-data span { color: var(--muted); }
-.custom-btn {
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  color: var(--text);
-  font-weight: 600;
-  border-radius: 2px;
+
+.navbar-brand {
+    font-size: 22px;
 }
-.custom-btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: var(--text); }
-.info-section { background: var(--panel-blue); }
-.info-panel {
-  height: 100%;
-  background: rgba(255,255,255,.42);
-  padding: 28px;
-  border-left: 5px solid var(--accent);
+
+h1 {
+    color: #191e2b;
 }
-.info-panel h2 { font-size: 1.35rem; margin-bottom: 12px; }
-.info-panel li { margin-bottom: 8px; }
-.custom-modal-header { background: var(--panel-blue); }
-.modal-content { border: none; border-radius: 3px; }
-.form-control { border-radius: 2px; }
-.form-control:focus {
-  border-color: var(--accent-dark);
-  box-shadow: 0 0 0 .2rem rgba(152,213,226,.3);
+
+.espacio {
+    max-width: 600px;
+    background-color: #cfe7fa;
+    border: none;
 }
-.custom-footer { background: var(--navy); color: var(--white); padding: 18px 0; }
-@media (max-width: 575.98px) {
-  .hero-section { padding: 40px 0 30px; }
-  .space-data p { flex-direction: column; gap: 2px; }
+
+.espacio h2 {
+    font-size: 24px;
+}
+
+.btn-primary {
+    background-color: #98d5e2;
+    border: none;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: #72bdce;
+    color: black;
+}
+
+.oculto {
+    display: none;
+}
+
+#formulario {
+    max-width: 600px;
 }
