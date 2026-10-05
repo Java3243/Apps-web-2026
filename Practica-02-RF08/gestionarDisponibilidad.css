@@ -7,7 +7,7 @@ body {
 }
 
 
-/* NAVBAR */
+
 
 .navbar {
     background-color: #b9dafa;
@@ -55,7 +55,7 @@ body {
 }
 
 
-/* ENCABEZADO */
+
 
 .encabezado {
     display: flex;
@@ -76,7 +76,7 @@ body {
 }
 
 
-/* BOTÓN PUBLICAR */
+
 
 .publicar {
     background-color: #526176;
@@ -91,7 +91,7 @@ body {
 }
 
 
-/* TARJETAS DE ESPACIOS */
+
 
 .espacio {
     background-color: white;
@@ -109,7 +109,7 @@ body {
 }
 
 
-/* IMAGEN */
+
 
 .imagen-espacio {
     width: 125px;
@@ -128,7 +128,7 @@ body {
 }
 
 
-/* INFORMACIÓN */
+
 
 .informacion {
     flex: 1;
@@ -146,7 +146,7 @@ body {
 }
 
 
-/* ACCIONES */
+
 
 .acciones {
     display: flex;
@@ -186,7 +186,7 @@ body {
 }
 
 
-/* RESUMEN */
+
 
 .resumen {
     background-color: white;
@@ -223,7 +223,7 @@ body {
 }
 
 
-/* PANEL DE GESTIÓN */
+
 
 .gestion {
     background-color: white;
@@ -270,14 +270,14 @@ body {
 }
 
 
-/* OCULTAR */
+
 
 .oculto {
     display: none;
 }
 
 
-/* CELULAR */
+
 
 @media (max-width: 768px) {
 
