@@ -1,0 +1,161 @@
+body {
+    background-color: #dfe7f7;
+    color: #263238;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+.navbar {
+    background-color: #b9dcfa;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+
+    background-color: #4f5d70;
+    color: white;
+
+    border-radius: 50%;
+
+    margin-right: 8px;
+}
+
+.nav-link {
+    margin-left: 15px;
+    color: #3f4b5c;
+}
+
+.nav-link.activo {
+    background-color: white;
+    border-radius: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+
+
+
+h1 {
+    font-weight: bold;
+}
+
+.ubicacion {
+    color: #667085;
+}
+
+
+
+
+.espacio {
+    background-color: #b7dcfa;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.imagen-espacio {
+    width: 180px;
+    height: 120px;
+
+    background-color: #4f5d70;
+    color: white;
+
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+}
+
+
+
+
+.servicios {
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    border: 1px solid #c9d4e2;
+}
+
+
+
+
+.reserva {
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    border: 1px solid #c9d4e2;
+}
+
+.reserva h2 {
+    margin-bottom: 25px;
+}
+
+.reserva label {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+
+
+.total {
+    border: 1px solid #c9d4e2;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    margin-top: 20px;
+}
+
+.total h4 {
+    margin-bottom: 0;
+}
+
+
+
+
+.reservar {
+    width: 100%;
+
+    margin-top: 20px;
+
+    background-color: #4f5d70;
+
+    color: white;
+
+    border-radius: 20px;
+}
+
+.reservar:hover {
+    background-color: #394555;
+    color: white;
+}
