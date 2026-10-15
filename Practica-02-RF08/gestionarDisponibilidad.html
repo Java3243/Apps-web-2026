@@ -53,7 +53,7 @@
                 </p>
             </div>
 
-            <button class="btn publicar">
+            <button class="btn publicar" type="button">
                 + Publicar espacio
             </button>
 
@@ -63,93 +63,87 @@
         <div class="row g-4">
 
         
-            <section class="col-lg-8">
+            <section class="col-lg-8 lista-espacios">
 
                 
+            
                 <div class="espacio">
-
                     <div class="imagen-espacio">
                         P
                     </div>
 
                     <div class="informacion">
-
-                        <h3>Estacionamiento Centro</h3>
+                        <h3 class="nombre-estacionamiento">
+                            Estacionamiento Centro
+                        </h3>
 
                         <p>
-                            Centro de Pachuca<br>
-                            $20 MXN / hora<br>
+                            <span class="direccion-estacionamiento">
+                                Centro de Pachuca
+                            </span><br>
+
+                            $<span class="precio-estacionamiento">20</span> MXN / hora<br>
+
                             Horario:
                             <span id="horario1">07:00 - 23:00</span>
                         </p>
-
                     </div>
 
                     <div class="acciones">
+                        <span id="estado1" class="disponible">Disponible</span>
 
-                        <span id="estado1" class="disponible">
-                            Disponible
-                        </span>
-
-                        <button class="btn editar">
+                        <button class="btn editar" type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalEditar">
                             Editar
                         </button>
 
-                        <button
-                            class="btn gestionar"
-                            onclick="gestionarEspacio(1)">
+                        <button class="btn gestionar" type="button">
                             Gestionar
                         </button>
-
                     </div>
-
                 </div>
-
 
                 
                 <div class="espacio">
-
                     <div class="imagen-espacio">
                         P
                     </div>
 
                     <div class="informacion">
-
-                        <h3>Zona Universidad</h3>
+                        <h3 class="nombre-estacionamiento">
+                            Zona Universidad
+                        </h3>
 
                         <p>
-                            Zona UPP<br>
-                            $18 MXN / hora<br>
+                            <span class="direccion-estacionamiento">
+                                Zona UPP
+                            </span><br>
+
+                            $<span class="precio-estacionamiento">18</span> MXN / hora<br>
+
                             Horario:
                             <span id="horario2">08:00 - 21:00</span>
                         </p>
-
                     </div>
 
                     <div class="acciones">
+                        <span id="estado2" class="disponible">Disponible</span>
 
-                        <span id="estado2" class="disponible">
-                            Disponible
-                        </span>
-
-                        <button class="btn editar">
+                        <button class="btn editar" type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalEditar">
                             Editar
                         </button>
 
-                        <button
-                            class="btn gestionar"
-                            onclick="gestionarEspacio(2)">
+                        <button class="btn gestionar" type="button">
                             Gestionar
                         </button>
-
                     </div>
-
                 </div>
-
+                
             </section>
 
-
-            
             <aside class="col-lg-4">
 
                 <div class="resumen">
@@ -178,8 +172,8 @@
         </div>
 
 
-       >
-        <div id="panelGestion" class="gestion oculto">
+       
+        <div id="panelGestion" class="collapse gestion">
 
             <h3>Gestionar espacio</h3>
 
@@ -210,7 +204,8 @@
 
             <button
                 class="btn guardar"
-                onclick="guardarCambios()">
+                id="btnGuardar"
+                type="button">
 
                 Guardar cambios
 
@@ -222,7 +217,97 @@
 
 
     
+    <div class="modal fade" id="modalEditar" tabindex="-1"
+         aria-labelledby="tituloModalEditar" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalEditar">
+                        Editar estacionamiento
+                    </h5>
+
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <label for="nombreEstacionamiento" class="form-label">
+                        Nombre del estacionamiento
+                    </label>
+                    <input type="text" id="nombreEstacionamiento"
+                           class="form-control" required>
+
+                    <label for="direccionEstacionamiento"
+                           class="form-label mt-3">
+                        Dirección
+                    </label>
+                    <input type="text" id="direccionEstacionamiento"
+                           class="form-control" required>
+
+                    <label for="precioEstacionamiento"
+                           class="form-label mt-3">
+                        Precio por hora
+                    </label>
+                    <input type="number" id="precioEstacionamiento"
+                           class="form-control" min="1" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="btn btn-primary"
+                            id="guardarEdicion">
+                        Guardar cambios
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+
+    <div id="autoparkToast"
+         class="toast"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+
+        <div class="toast-header">
+            <strong class="me-auto">AutoPark</strong>
+
+            <small>Ahora</small>
+
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="toast"
+                    aria-label="Cerrar">
+            </button>
+        </div>
+
+        <div class="toast-body" id="mensajeToast">
+            Operación realizada correctamente.
+        </div>
+
+    </div>
+
+</div>
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
     <script src="gestionarDisponibilidad.js"></script>
+
 
 </body>
 

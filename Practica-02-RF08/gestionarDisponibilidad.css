@@ -256,11 +256,19 @@ body {
     border-radius: 8px;
 }
 
+
 .horarios {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
+
+.horarios input {
+    flex: 1 1 120px;
+    min-width: 0;
+}
+
 
 .guardar {
     margin-top: 20px;
